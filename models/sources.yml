@@ -1,0 +1,66 @@
+version: 2
+
+sources:
+  - name: raw
+    database: <your_database>
+    schema: raw
+    description: Raw data from external systems
+    
+    tables:
+      - name: bus_data
+        description: Raw bus tracking and route data
+        columns:
+          - name: id
+            description: Unique identifier
+          - name: bus_id
+            description: Bus identifier
+          - name: route_id
+            description: Route identifier
+          - name: timestamp
+            description: Data timestamp
+            
+      - name: traffic_data
+        description: Raw traffic and congestion data
+        columns:
+          - name: id
+            description: Unique identifier
+          - name: location_id
+            description: Location identifier
+          - name: congestion_level
+            description: Traffic congestion level
+          - name: timestamp
+            description: Data timestamp
+            
+      - name: station_data
+        description: Raw transit station information
+        columns:
+          - name: id
+            description: Unique identifier
+          - name: station_name
+            description: Station name
+          - name: location
+            description: Geographic location
+          - name: capacity
+            description: Station capacity
+            
+  - name: staging
+    database: <your_database>
+    schema: staging
+    description: Staging layer for transformed data
+    
+    tables:
+      - name: stg_buses
+        description: Cleaned and prepared bus data
+        columns:
+          - name: bus_id
+            description: Unique bus identifier
+          - name: route_id
+            description: Route identifier
+            
+      - name: stg_traffic
+        description: Cleaned and prepared traffic data
+        columns:
+          - name: location_id
+            description: Unique location identifier
+          - name: congestion_level
+            description: Traffic congestion level

@@ -1,0 +1,25 @@
+amman_tds_test:
+  outputs:
+    dev:
+      type: snowflake
+      account: https://jgyaacf-mp18200.snowflakecomputing.com
+      user: didingnuriska
+      password: Galon@8989Tekmbik@8989
+      role: DBT_ROLE
+      database: AMMN_TDS
+      schema: TDS_SILVER
+      threads: 1
+      client_session_keep_alive: False
+      
+    # prod:
+    #   type: snowflake
+    #   account: <your_snowflake_account_identifier>
+    #   user: <your_snowflake_username>
+    #   password: <your_snowflake_password>
+    #   role: <your_role>
+    #   database: <your_database>
+    #   schema: prod
+    #   threads: 4
+    #   client_session_keep_alive: False
+      
+  target: dev
