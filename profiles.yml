@@ -2,10 +2,11 @@ amman_tds_test:
   outputs:
     dev:
       type: snowflake
-      account: https://jgyaacf-mp18200.snowflakecomputing.com
+      account: mp18200.jgyaacf
       user: didingnuriska
       password: Galon@8989Tekmbik@8989
       role: DBT_ROLE
+      warehouse: COMPUTE_WH
       database: AMMN_TDS
       schema: TDS_SILVER
       threads: 1
